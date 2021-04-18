@@ -4,6 +4,6 @@ export function checkAuthenticated() {
 
 export function checkAuthorized(roles: any) {
   return function checkRoles() {
-    return false;
+    return true;
   };
 }

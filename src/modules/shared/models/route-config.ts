@@ -5,4 +5,5 @@ export default interface RouteConfig {
   to?: string;
   exact?: boolean;
   canEnter?: (() => boolean)[];
+  children?: RouteConfig[];
 }
