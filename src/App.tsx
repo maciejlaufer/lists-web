@@ -1,12 +1,12 @@
-import styles from './App.module.scss';
+import AppLayout from './AppLayout';
+
 import AppRouter from './AppRouter';
 
 function App() {
   return (
-    <div className={styles.App}>
-      layout
+    <AppLayout>
       <AppRouter />
-    </div>
+    </AppLayout>
   );
 }
 
