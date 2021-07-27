@@ -1,5 +1,5 @@
+import { NotFoundView } from '@shared/views';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
-import RouteConfig from '@shared/models/route-config';
 
 const DashboardRouter = () => {
   const match = useRouteMatch();
@@ -13,7 +13,7 @@ const DashboardRouter = () => {
         <div>Test</div>
       </Route>
       <Route exact path="*">
-        <div>Not found dashboard</div>
+        <NotFoundView />
       </Route>
     </Switch>
   );

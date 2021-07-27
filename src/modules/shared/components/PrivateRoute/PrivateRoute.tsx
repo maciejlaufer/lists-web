@@ -1,17 +1,21 @@
 import React from 'react';
 import { Redirect, Route, RouteProps } from 'react-router-dom';
+import UserRole from '@shared/models/user-role';
+import { AuthUtils } from '@shared/utils';
 
-const GuardedRoute: React.FC<{ canEnter: (() => boolean)[] } & RouteProps> = ({
-  canEnter,
+const PrivateRoute: React.FC<{ roles?: UserRole[] } & RouteProps> = ({
+  roles,
   ...restProps
 }) => {
-  for (const f of canEnter) {
-    if (!f()) {
-      return <Redirect to="/login" />;
-    }
+  if (!AuthUtils.checkAuthenticated()) {
+    return <Redirect to="/login" />;
+  }
+
+  if (roles && roles.length > 0 && !AuthUtils.checkAuthorized(roles)) {
+    return <Redirect to="/" />;
   }
 
   return <Route {...restProps} />;
 };
 
-export default GuardedRoute;
+export default PrivateRoute;

@@ -2,9 +2,12 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "src/*": ["src/*"],
       "@shared/*": ["src/modules/shared/*"],
       "@lists/*": ["src/modules/lists/*"],
-      "@auth/*": ["src/modules/auth/*"]
+      "@auth/*": ["src/modules/auth/*"],
+      "@dashboard/*": ["src/modules/dashboard/*"],
+      "@settings/*": ["src/modules/settings/*"]
     }
   }
 }

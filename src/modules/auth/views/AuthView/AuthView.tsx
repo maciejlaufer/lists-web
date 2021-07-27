@@ -1,4 +1,4 @@
-const AuthLayout: React.FC = ({ children }) => {
+const AuthView: React.FC = ({ children }) => {
   return (
     <div>
       <div>Auth layout</div>
@@ -7,4 +7,4 @@ const AuthLayout: React.FC = ({ children }) => {
   );
 };
 
-export default AuthLayout;
+export default AuthView;
